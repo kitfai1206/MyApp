@@ -28,7 +28,15 @@
 
 <div>
     <label>Cover</label>
-    <input type="file" name="cover" >
+    <input type="file" name="cover" class="filepond">
+    <script>
+        FilePond.registerPlugin(FilePondPluginImagePreview);
+        FilePond.registerPlugin(FilePondPluginImageResize);
+        FilePond.registerPlugin(FilePondPluginFileEncode);
+        const inputElement = document.querySelector('input[type="file"]');
+        const pond = FilePond.create(inputElement);
+    </script>
+    
 </div>
 
 <div>
